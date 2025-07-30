@@ -1,0 +1,13 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Eependecies
+node_modules
+
+# Typescript build output
+/dist
+
+# OS generated files
+.DS_store
