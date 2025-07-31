@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  quality-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/setup-node@v4
+        with:
+          node_version_file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install dependecies
+        run: npm ci
+
+      - name: Run tests
+        run: npm run test:run
+
+      - name: Run Typescript type checking
+        run: npm run type-check
+
+      - name: run ESLint and fix
+        run: npm run list:fix
+
+      - name: Format with Prettier
+        run: npm run format
+
+      - name: Check for remaining ESLint errors
+        run: npm run lint
+
+      - name: Check for remaining formatting issues
+        run: npm run format:check
