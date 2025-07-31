@@ -11,8 +11,8 @@
     "dev:prod": "tsx --watch --env-file .env.production src/index.ts",
     "start": "node --env-file .env dist/index.js",
     "build": "tsc",
-    "type-check:": "tsc --noEmit",
-    "lint:": "eslint .",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write . "
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@tsconfig/node22": "^22.0.2",
+    "@tsconfig/node23": "^23.0.2",
     "@types/express": "^5.0.3",
     "@types/node": "^24.1.0",
     "@vitest/coverage-v8": "^3.2.4",
