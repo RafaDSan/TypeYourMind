@@ -28,10 +28,10 @@ jobs:
         run: npm run type-check
 
       - name: run ESLint and fix
-        run: npm run list:fix
+        run: npm run lint:fix
 
       - name: Format with Prettier
-        run: npm run format
+        run: npm run format:fix
 
       - name: Check for remaining ESLint errors
         run: npm run lint
